@@ -131,6 +131,7 @@ module JsonSchema
         schema = Schema.new
         schema.fragment = fragment
         schema.parent = parent
+        schema.uri = build_uri(nil, parent ? parent.uri : nil)
         schema.reference = JsonReference::Reference.new(ref)
       else
         schema = parse_schema(data, parent, fragment)
